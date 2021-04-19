@@ -25,6 +25,7 @@
 			background: url(gold.jfif);
 		}
 		h2 { text-align: center; }
+		h3 { position: relative bottom left; font-size: 30pt; font-family: "King"; color: rgba(255, 0, 0, 0); }
 	</style>
 	<audio loop autoplay id="bgm">
 		<source src="sound.mp3">
@@ -33,13 +34,22 @@
 		var audio = document.getElementById("bgm");
 		audio.volume = 0.3;
 	</script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-  <form method="post" name="Form" action="writenick.php">
+  <form method="post" name="form" id="form">
   <h1>Greetings, I want to play a game with you! First, enter your name!<a>(Press 'f11' for fullscreen experience)<a></h1>
     <h1>Enter your name:</h1>
     <h2><input class="box1" type="text" name="nick" autocomplete="false" required></h2><br>
     <h2><input class="butt" type="submit" value="Play!"></h2>
+    <h3 id="egg">EGG</h3>
+    <script>
+    	$('#egg').click(function()
+    	{
+    		$('#egg').css('color', 'rgba(255, 0, 0, 1)')
+    		$('#egg').html('You found useless Easter Egg!<br>Congratulations!')
+    	})
+    </script>
   </form>
 </body>
 </html>
